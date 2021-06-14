@@ -5,7 +5,7 @@ from components.DeConv import  DeConv
 
 
 
-class ConvGRUCell(nn.Module):
+class ASM(nn.Module):
     def __init__(self, in_channels, out_channel,attr_dim, kernel_size = 3, up_scale = 4, norm='none'):
         super().__init__()
         self.n_class=attr_dim

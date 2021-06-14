@@ -46,7 +46,10 @@ class Trainer(object):
         lr_base     = self.config["gLr"]
         beta1       = self.config["beta1"]
         beta2       = self.config["beta2"]
+        # lrDecayStep = self.config["lrDecayStep"]
+        # batch_size  = self.config["batchSize"]
         n_class     = len(self.config["selectedStyleDir"])
+        # prep_weights= self.config["layersWeight"]
         feature_w   = self.config["featureWeight"]
         transform_w = self.config["transformWeight"]
         dStep       = self.config["dStep"]
@@ -137,10 +140,16 @@ class Trainer(object):
         
         # Data iterator
         print("prepare the dataloaders...")
+        # total_iter  = iter(total_loader)
+        # prefetcher = data_prefetcher(total_loader)
+        # input, target = prefetcher.next()
+        # style_iter      = iter(style_loader)
 
         print("prepare the fixed labels...")
         fix_label   = [i for i in range(n_class)]
         fix_label   = torch.tensor(fix_label).long().cuda()
+        # fix_label       = fix_label.view(n_class,1)
+        # fix_label       = torch.zeros(n_class, n_class).cuda().scatter_(1, fix_label, 1)
 
         # Start time
         import datetime
@@ -177,8 +186,22 @@ class Trainer(object):
             # ================== Train D ================== #
             # Compute loss with real images
             for _ in range(dStep):
+                # start_time = time.time()
+                # try:
+                #     # content_images      = next(content_iter)
+                #     # style_images,label  = next(style_iter)
+                #     content_images,style_images,label  = next(total_iter) 
+                # except:
+                #     # style_iter          = iter(style_loader)
+                #     # content_iter        = iter(content_loader)
+                #     # style_images,label  = next(style_iter)
+                #     # content_images      = next(content_iter)
+                #     total_iter    = iter(total_loader)
+                #     content_images,style_images,label  = next(total_iter) 
+                # label           = label.view(batch_size,1)
                 content_images,style_images,label  = total_loader.next()
                 label           = label.long()
+                #print(label.size())
                 d_out = Dis(style_images,label)
                 d_loss_real = 0
                 for i in range(output_size):
@@ -190,13 +213,17 @@ class Trainer(object):
                 d_out = Dis(content_images,label)
                 for i in range(output_size):
                     temp = Hinge_loss(1 + d_out[i]).mean()
+                    # temp *= prep_weights[i]
                     d_loss_photo += temp
 
+                # label        = label.view(batch_size,1)
+                # style_labels = torch.zeros(batch_size, n_class).cuda().scatter_(1, label, 1)
                 fake_image,_ = Gen(content_images,label)
                 d_out = Dis(fake_image.detach(),label)
                 d_loss_fake = 0
                 for i in range(output_size):
                     temp = Hinge_loss(1 + d_out[i]).mean()
+                    # temp *= prep_weights[i]
                     d_loss_fake += temp
 
                 # Backward + Optimize
@@ -204,10 +231,28 @@ class Trainer(object):
                 d_optimizer.zero_grad()
                 d_loss.backward()
                 d_optimizer.step()
+                # elapsed = time.time() - start_time
+                # elapsed = str(datetime.timedelta(seconds=elapsed))
+                # print("inference time %s"%elapsed)
             
             # ================== Train G ================== #
             for _ in range(gStep):
+                # try:
+                #     # content_images      = next(content_iter)
+                #     # style_images,label  = next(style_iter)
+                #     content_images,_,_  = next(total_iter) 
+                # except:
+                #     # style_iter          = iter(style_loader)
+                #     # content_iter        = iter(content_loader)
+                #     # style_images,label  = next(style_iter)
+                #     # content_images      = next(content_iter)
+                #     total_iter    = iter(total_loader)
+                #     content_images,_,_  = next(total_iter) 
                 content_images,_,_  = total_loader.next()
+                # content_images  = content_images.cuda()
+                # label     = label.view(batch_size,1)
+                # style_labels = torch.zeros(batch_size, n_class).cuda().scatter_(1, label, 1)
+                # fake_image,real_feature = Gen(content_images,style_labels)
                 fake_image,real_feature = Gen(content_images,label)
                 fake_feature            = Gen(fake_image, get_feature=True)
                 d_out                   = Dis(fake_image,label.long())
@@ -258,8 +303,25 @@ class Trainer(object):
                     for index in range(n_class):
                         fake_images,_ = Gen(sample, fix_label[index].unsqueeze(0))
                         saved_image1 = torch.cat((saved_image1, denorm(fake_images.cpu().data)), 0)
+                    # for clas in range(n_class-1):
+                    #     sample = torch.cat((sample, content_images[0, :, :, :].unsqueeze(0)), 0)
+                    # fake_images,_ = Gen(sample, fix_label)
+                    # saved_image1 = torch.cat([denorm(content_images[0, :, :, :].unsqueeze(0)),denorm(fake_images.data)],0)
+                    # saved_image2 = torch.cat([denorm(style_images),denorm(fake_images.data)],3)
+                    # wo        = torch.cat([saved_image1,saved_image2],2)
                     save_image(saved_image1,
                             os.path.join(sample_dir, '{}_fake.jpg'.format(step + 1)),nrow=3)
+                # print("Transfer validation images")
+                # num = 1
+                # for val_img in self.validation_data:
+                #     print("testing no.%d img"%num)
+                #     val_img = val_img.cuda()
+                #     fake_images,_ = Gen(val_img)
+                #     saved_val_image = torch.cat([denorm(val_img),denorm(fake_images)],3)
+                #     save_image(saved_val_image,
+                #            os.path.join(self.valres_path, '%d_%d.jpg'%((step+1),num)))
+                #     num +=1
+                # save_image(denorm(displaymask.data),os.path.join(self.sample_path, '{}_mask.png'.format(step + 1)))
 
             if (step+1) % model_freq==0:
                 print("Save step %d model checkpoints!"%(step+1))

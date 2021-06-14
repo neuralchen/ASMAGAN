@@ -1,10 +1,10 @@
 # Related scripts
-trainScriptName: condition_SN_multiscale_big_union_detail_fixoptim_sampleonebyone
-gScriptName: Conditional_Generator_tanh_lstu_afterconditionalres_spatialgate_tanh_fix
-dScriptName: Conditional_Discriminator_Projection_big
+trainScriptName: condition_SN_multiscale_sampleonebyone
+gScriptName: Conditional_Generator_asm
+dScriptName: Conditional_Discriminator_Projection
 
 # Training information
-totalStep: 1000000
+totalStep: 400000
 batchSize_list: [8,4,1] 
 switch_step_list: [0, 100000, 200000]
 imCropSize_list: [256, 512, 768]

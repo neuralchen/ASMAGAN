@@ -20,7 +20,7 @@ from torch.nn import functional as F
 
 from components.ResBlock import ResBlock
 from components.DeConv   import DeConv
-from components.Conditional_ConvGRUCell_spatialgate_tanh_fix import *
+from components.ASM import ASM
 from components.Conditional_ResBlock import Conditional_ResBlock
 
 class Generator(nn.Module):
@@ -96,7 +96,7 @@ class Generator(nn.Module):
             nn.Tanh()
         )
 
-        self.lstu1 = ConvGRUCell(in_channels=256,out_channel=64,attr_dim=class_num,up_scale=8,norm='in')
+        self.asm = ASM(in_channels=256,out_channel=64,attr_dim=class_num,up_scale=8,norm='in')
 
 
 
@@ -124,7 +124,7 @@ class Generator(nn.Module):
         out = self.conditional_res(x5, condition)
         #print(x2.size())
         #print(x5.size())
-        output4 = self.lstu1(x2, out,condition)
+        output4 = self.asm(x2, out,condition)
         h = output4
         # n, _,h,w = out.size()
         # attr = condition.view((n, self.n_class, 1, 1)).expand((n, self.n_class, h, w))
