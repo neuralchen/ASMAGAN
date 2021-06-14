@@ -41,6 +41,12 @@ def getParameters():
     parser.add_argument('--totalImg', type=int, default=20)
     parser.add_argument('--saveTestImg', type=str2bool, default=True)
     parser.add_argument('--testImgRoot', type=str, default="D:\\PatchFace\\PleaseWork\\Benchmark\\styletransfer")
+    parser.add_argument('--specify_sytle', type=int, default=-1, help= 'When the value is -1, 11 painters styles are used for image(s) respectively for style transfer. '\
+                                                                    'The values corresponding to each painters style are as follows' \
+                                                                    '[0: Berthe Moriso, 1: Edvard Munch, 2: Ernst Ludwig Kirchner, 3: Jackson Pollock, 4: Wassily Kandinsky, \
+                                                                    5: Oscar-Claude Monet, 6: Nicholas Roerich, 7: Paul Cézanne, 8: Pablo Picasso, 9 : Samuel Colman, \
+                                                                    10: Vincent Willem van Gogh]')
+    
     parser.add_argument('--useSpecifiedImg', type=str2bool, default=False)
     parser.add_argument('--specifiedTestImages', nargs='+', help='selected images for validation', 
             # '000121.jpg','000124.jpg','000129.jpg','000132.jpg','000135.jpg','001210.jpg','001316.jpg', 
@@ -165,6 +171,7 @@ if __name__ == '__main__':
         sys_state["useSpecifiedImg"]= config.useSpecifiedImg
         sys_state["checkpointStep"] = config.checkpoint
         sys_state["testImgRoot"]    = config.testImgRoot
+        sys_state["specify_sytle"]    = config.specify_sytle
 
         sys_state["testSamples"]    = os.path.join(env_config["testLogRoot"], sys_state["version"] , "samples")
         if not os.path.exists(sys_state["testSamples"]):
