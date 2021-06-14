@@ -34,7 +34,7 @@ pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
 - **Traning dataset**
     - Coming soon
 - **pre-trained model**
-    - Download the model from [Github Realses](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMfinal.zip), and unzip the files to ***./train_logs/***
+    - Download the model from [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMfinal.zip), and unzip the files to ***./train_logs/***
     
 
 ## Usage
