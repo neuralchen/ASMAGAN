@@ -46,19 +46,19 @@ pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
 The command line below will generate 1088*1920 HD style migration pictures of 11 painters for each picture of testImgRoot (11 painters include: ***Berthe Moriso*** , ***Edvard Munch***, ***Ernst Ludwig Kirchner***, ***Jackson Pollock***, ***Wassily Kandinsky***, ***Oscar-Claude Monet***, ***Nicholas Roerich***, ***Paul Cézanne***, ***Pablo Picasso*** ,***Samuel Colman***, ***Vincent Willem van Gogh***.
 - Example of style transfer with  ***all 11*** artists style 
     ```console
-    python main.py --mode test --cuda 0 --version ASMfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle -1 
+    python main.py --mode test --cuda 0 --version ASMAfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle -1 
     ```
 
 - Example of style transfer with  ***Pablo Picasso*** style 
 
     ```console
-    python main.py --mode test --cuda 0 --version ASMfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle 8 
+    python main.py --mode test --cuda 0 --version ASMAfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle 8 
     ```
 
 - Example of style transfer with  ***Wassily Kandinsky*** style 
 
     ```console
-    python main.py --mode test --cuda 0 --version ASMfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle 4
+    python main.py --mode test --cuda 0 --version ASMAfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle 4
     ```
 
 --version refers to the ASMAGAN training logs name.
