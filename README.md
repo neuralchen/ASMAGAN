@@ -9,10 +9,26 @@
 ![Framework](/doc/img/framework.png)
 
 ## Results
-<img src="./doc/img/1.png" zoom="30%"/>
+<img src="./doc/img/1.png"  style="zoom: 20%;"/>
+<img src="./doc/img/2.png"  style="zoom: 20%;"/>
 
-![Results1](/doc/img/1.png)![Results2](/doc/img/2.png)
-![Results3](/doc/img/3.png)![Results4](/doc/img/4.png)
+<img src="./doc/img/3.png"  style="zoom: 20%;"/>
+<img src="./doc/img/4.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/5.png"  style="zoom: 20%;"/>
+<img src="./doc/img/6.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/7.png"  style="zoom: 20%;"/>
+<img src="./doc/img/8.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/9.png"  style="zoom: 20%;"/>
+<img src="./doc/img/10.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/11.png"  style="zoom: 20%;"/>
+<img src="./doc/img/12.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/13.png"  style="zoom: 12%;"/>
+<img src="./doc/img/14.png"  style="zoom: 12%;"/>
 
 ## Video
 <img src="./doc/img/video.webp"/>
