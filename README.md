@@ -9,9 +9,10 @@
 ![Framework](/doc/img/framework.png)
 
 ## Results
-![Results1](/doc/img/results1.PNG)
-
-![Results2](/doc/img/total.PNG)
+![Results1](/doc/img/1.png)
+![Results2](/doc/img/2.png)
+![Results3](/doc/img/3.png)
+![Results4](/doc/img/4.png)
 
 ## Video
 <img src="./doc/img/video.webp"/>
