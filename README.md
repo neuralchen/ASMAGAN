@@ -8,42 +8,6 @@
 ## Methodology
 ![Framework](/doc/img/framework.png)
 
-## Results
-<img src="./doc/img/1.png"  style="zoom: 20%;"/>
-<img src="./doc/img/2.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/3.png"  style="zoom: 20%;"/>
-<img src="./doc/img/4.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/5.png"  style="zoom: 20%;"/>
-<img src="./doc/img/6.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/7.png"  style="zoom: 20%;"/>
-<img src="./doc/img/8.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/9.png"  style="zoom: 20%;"/>
-<img src="./doc/img/10.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/11.png"  style="zoom: 20%;"/>
-<img src="./doc/img/12.png"  style="zoom: 20%;"/>
-
-<img src="./doc/img/13.png"  style="zoom: 12%;"/>
-<img src="./doc/img/14.png"  style="zoom: 12%;"/>
-
-## Video
-<img src="./doc/img/video.webp"/>
-
-**High-quality videos can be found in the link below:**
-
-[[Google Drive link for video 1]](https://drive.google.com/file/d/1hdne7Gw39d34zt3w1NYV3Ln5cT8PfCNm/view?usp=sharing)
-
-[[Google Drive link for video 2]](https://drive.google.com/file/d/1oftHAnLmgFis4XURcHTccGSWbWSXYKK1/view?usp=sharing)
-
-[[Baidu Drive link for video]](https://pan.baidu.com/s/1WTS6jm2TY17bYJurw57LUg ) Password: ```b26n```
-
-[[Online Video]](https://www.bilibili.com/video/BV12v411p7j5/)
-
-
 ## Dependencies
 - python3.6+
 - pytorch1.5+
@@ -94,5 +58,22 @@ There are two archive files in the drive: **checkpoints.zip** and **arcface_chec
 }
 ```
 
+## Some Results
+![Results1](/doc/img/total.png)
+
 ## Related Projects
 Learn about our other projects [[RainNet]](https://neuralchen.github.io/RainNet), [[Sketch Generation]](https://github.com/TZYSJTU/Sketch-Generation-with-Drawing-Process-Guided-by-Vector-Flow-and-Grayscale), [[CooGAN]](https://github.com/neuralchen/CooGAN), [[Knowledge Style Transfer]](https://github.com/AceSix/Knowledge_Transfer), [[SimSwap]](https://github.com/neuralchen/SimSwap),[[ASMA-GAN]](https://github.com/neuralchen/ASMAGAN),[[Pretrained_VGG19]](https://github.com/neuralchen/Pretrained_VGG19).
+
+## High Resolution Results
+
+<img src="./doc/img/7.png"  style="zoom: 20%;"/>
+<img src="./doc/img/8.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/9.png"  style="zoom: 20%;"/>
+<img src="./doc/img/10.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/11.png"  style="zoom: 20%;"/>
+<img src="./doc/img/12.png"  style="zoom: 20%;"/>
+
+<img src="./doc/img/13.png"  style="zoom: 12%;"/>
+<img src="./doc/img/14.png"  style="zoom: 12%;"/>
