@@ -5,6 +5,10 @@
 
 [[Arxiv paper]](https://arxiv.org/abs/2010.08175)
 
+![logo](/doc/img/logo.png)
+
+![title](/doc/img/title.png)
+
 ## Methodology
 ![Framework](/doc/img/framework.png)
 
