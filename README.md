@@ -56,13 +56,11 @@ The command line below will generate 1088*1920 HD style migration pictures of 11
     ```console
     python main.py --mode test --cuda 0 --version ASMfinal  --dataloader_workers 8   --testImgRoot ./bench/ --nodeName localhost --checkpoint 350000 --testScriptsName common_useage --specify_sytle 4
     ```
---testImgRoot can be a folder with images or the path of a single picture.You can assign the image(s) you want to perform style transfer to this argument."--Specify_sytle" is used to specify which painter's style is used for style transfer. When the value is -1, the style of 11 painters will be transferred for image(s)
-
+    
+--testImgRoot can be a folder with images or the path of a single picture.You can assign the image(s) you want to perform style transfer to this argument.
 
 --specify_sytle is used to specify which painter's style is used for style transfer. When the value is -1, 11 painters' styles are used for image(s) respectively for style transfer. The values corresponding to each painter's style are as follows
 [0: Berthe Moriso, 1: Edvard Munch, 2: Ernst Ludwig Kirchner, 3: Jackson Pollock, 4: Wassily Kandinsky, 5: Oscar-Claude Monet, 6: Nicholas Roerich, 7: Paul Cézanne, 8: Pablo Picasso, 9 : Samuel Colman, 10: Vincent Willem van Gogh]
-
---
 
 ## To cite our paper
 ```
