@@ -110,7 +110,7 @@ if __name__ == '__main__':
     
     # Train mode
     if config.mode == "train":
-        
+
         sys_state["version"]                = config.version
         sys_state["experimentDescription"]  = config.experimentDescription
         sys_state["mode"]                   = config.mode
