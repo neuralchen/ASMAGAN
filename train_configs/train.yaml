@@ -1,0 +1,73 @@
+# Related scripts
+trainScriptName: condition_SN_multiscale_big_union_detail_fixoptim_sampleonebyone
+gScriptName: Conditional_Generator_tanh_lstu_afterconditionalres_spatialgate_tanh_fix
+dScriptName: Conditional_Discriminator_Projection_big
+
+# Training information
+totalStep: 1000000
+batchSize_list: [8,4,1] 
+switch_step_list: [0, 100000, 200000]
+imCropSize_list: [256, 512, 768]
+max2Keep: 10
+movingAverage: 0.05
+dSuccessThreshold: 0.8
+
+# Dataset
+selectedStyleDir: ['berthe-morisot','edvard-munch',
+                   'ernst-ludwig-kirchner','jackson-pollock','kandinsky','monet',
+                   'nicholas','paul-cezanne','picasso','samuel','vangogh']
+
+selectedContentDir: ['a_abbey', 'a_arch', 'a_amphitheater', 'a_aqueduct', 'a_arena_rodeo', 'a_athletic_field_outdoor',
+         'b_badlands', 'b_balcony_exterior', 'b_bamboo_forest', 'b_barn', 'b_barndoor', 'b_baseball_field',
+         'b_basilica', 'b_bayou', 'b_beach', 'b_beach_house', 'b_beer_garden', 'b_boardwalk', 'b_boathouse',
+         'b_botanical_garden', 'b_bullring', 'b_butte', 'c_cabin_outdoor', 'c_campsite', 'c_campus',
+         'c_canal_natural', 'c_canal_urban', 'c_canyon', 'c_castle', 'c_church_outdoor', 'c_chalet',
+         'c_cliff', 'c_coast', 'c_corn_field', 'c_corral', 'c_cottage', 'c_courtyard', 'c_crevasse',
+         'd_dam', 'd_desert_vegetation', 'd_desert_road', 'd_doorway_outdoor', 'f_farm', 'f_fairway',
+         'f_field_cultivated', 'f_field_wild', 'f_field_road', 'f_fishpond', 'f_florist_shop_indoor',
+         'f_forest_broadleaf', 'f_forest_path', 'f_forest_road', 'f_formal_garden', 'g_gazebo_exterior',
+         'g_glacier', 'g_golf_course', 'g_greenhouse_indoor', 'g_greenhouse_outdoor', 'g_grotto', 'g_gorge',
+         'h_hayfield', 'h_herb_garden', 'h_hot_spring', 'h_house', 'h_hunting_lodge_outdoor', 'i_ice_floe',
+         'i_ice_shelf', 'i_iceberg', 'i_inn_outdoor', 'i_islet', 'j_japanese_garden', 'k_kasbah',
+         'k_kennel_outdoor', 'l_lagoon', 'l_lake_natural', 'l_lawn', 'l_library_outdoor', 'l_lighthouse',
+         'm_mansion', 'm_marsh', 'm_mausoleum', 'm_moat_water', 'm_mosque_outdoor', 'm_mountain',
+         'm_mountain_path', 'm_mountain_snowy', 'o_oast_house', 'o_ocean', 'o_orchard', 'p_park',
+         'p_pasture', 'p_pavilion', 'p_picnic_area', 'p_pier', 'p_pond', 'r_raft', 'r_railroad_track',
+         'r_rainforest', 'r_rice_paddy', 'r_river', 'r_rock_arch', 'r_roof_garden', 'r_rope_bridge',
+         'r_ruin', 's_schoolhouse', 's_sky', 's_snowfield', 's_swamp', 's_swimming_hole',
+         's_synagogue_outdoor', 't_temple_asia', 't_topiary_garden', 't_tree_farm', 't_tree_house',
+         'u_underwater_ocean_deep', 'u_utility_room', 'v_valley', 'v_vegetable_garden', 'v_viaduct',
+         'v_village', 'v_vineyard', 'v_volcano', 'w_waterfall', 'w_watering_hole', 'w_wave',
+         'w_wheat_field', 'z_zen_garden', 'a_alcove', 'a_apartment-building_outdoor', 'a_artists_loft',
+         'b_building_facade', 'c_cemetery']
+
+# Optimizer
+gLr: 0.0002
+dLr: 0.0002
+# lrDecay: 0.1
+# lrDecayStep: 100
+# lrDecayEnable: True
+beta1: 0.9
+beta2: 0.999
+dStep: 3
+gStep: 1
+featureWeight: 50.0
+transformWeight: 50.0
+layersWeight: [1.0, 1.0, 1.0, 1.0, 1.0]
+
+# Model hyper-parameters
+GConvDim: 32
+DConvDim: 32
+GKS: 3
+DKS: 5
+resNum: 8
+GEncActName: leakyrelu
+GDecActName: relu
+GOutActName: tanh
+DActName: leakyrelu
+
+# Log 
+logStep: 1000
+sampleStep: 2000
+modelSaveStep: 5000
+useTensorboard: True

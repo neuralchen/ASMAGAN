@@ -1,0 +1,8 @@
+{
+    "abc":{
+        "ip":"192.168.4.89",
+        "user":"abcd",
+        "passwd":"abcde",
+        "basePath":"/media/abcde/Data/CXH/train_logs"
+    }
+}

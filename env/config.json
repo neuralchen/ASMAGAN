@@ -1,0 +1,16 @@
+{
+    "path":{
+        "trainLogRoot":"./train_logs",
+        "testLogRoot":"./test_logs",
+        "systemLog":"./system/system_log.log",
+        "datasetPath":{
+            "Place365_big":"/home/ps/Datasets/Wikiart_place365/Place365_large/",
+            "WikiArt":"/home/ps/Datasets/Wikiart_place365/Art_Data/data_art_backup/"
+        },
+        "trainConfigPath":"./train_configs",
+        "trainScriptsPath":"./train_scripts",
+        "testScriptsPath":"./test_scripts",
+        "remoteNodeInfo":"./nodesInfo/nodes.json",
+        "configJsonName":"model_config.json"
+    }
+}
