@@ -8,22 +8,40 @@
 ## Methodology
 ![Framework](/doc/img/framework.png)
 
+
 ## Dependencies
 - python3.6+
 - pytorch1.5+
 - torchvision
-- opencv
-- pillow
-- numpy
+- pyyaml 
+- paramiko 
+- pandas 
+- requests 
+- tensorboard 
+- tensorboardX 
+- tqdm
 
+## Installation
+### We highly recommend you to use Anaconda for installation
+```
+conda create -n ASMA python=3.6
+conda activate ASMA
+conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.1 -c pytorch
+pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
+```
+
+## Preparation
+- **Dataset**
+    - Coming soon
+- **pre-trained model**
+    - Download the model from [Github Realses](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMfinal.zip), and unzip the files to ***./train_logs/***
+    
 
 ## Usage
 ### To test the pretrained model
 ***Not ready***
 
-## Pretrained model
-Pretrained model can be found in the releases.
-***Not ready***
+
 
 ## To cite our paper
 ```
