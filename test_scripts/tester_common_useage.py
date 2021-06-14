@@ -38,6 +38,7 @@ class Tester(object):
         test_img    = self.config["testImgRoot"]
         save_dir    = self.config["testSamples"]
         batch_size  = self.config["batchSize"]
+        specify_sytle  = self.config["specify_sytle"]
         n_class     = len(self.config["selectedStyleDir"])
         StyleDir    = self.config["selectedStyleDir"]
         print("%d classes"%n_class)
@@ -74,13 +75,22 @@ class Tester(object):
                 content,img_name = test_data()
                 img_name_real = img_name.split('.')[0]
                 final_res = None
-                for i in range(n_class):
+                if specify_sytle == -1:
+                    for i in range(n_class):
+                        if self.config["cuda"] >=0:
+                            content = content.cuda()
+                        res, _ = Gen(content, condition_labels[i, 0, :])
+                        save_image(denorm(res.data),
+                            os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[i])),
+                            nrow=n_class)  # ,nrow=self.batch_size)
+                else:
                     if self.config["cuda"] >=0:
-                        content = content.cuda()
-                    res, _ = Gen(content, condition_labels[i, 0, :])
+                            content = content.cuda()
+                    res, _ = Gen(content, condition_labels[specify_sytle, 0, :])
                     save_image(denorm(res.data),
-                           os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[i])),
-                           nrow=n_class)  # ,nrow=self.batch_size)
+                        os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[i])),
+                        nrow=n_class)  # ,nrow=self.batch_size)
+
         elapsed = time.time() - start_time
         elapsed = str(datetime.timedelta(seconds=elapsed))
         print("Elapsed [{}]".format(elapsed))
