@@ -88,7 +88,7 @@ class Tester(object):
                             content = content.cuda()
                     res, _ = Gen(content, condition_labels[specify_sytle, 0, :])
                     save_image(denorm(res.data),
-                        os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[i])),
+                        os.path.join(save_dir, '{}_step{}_s_{}.png'.format(img_name_real, self.config["checkpointStep"],StyleDir[specify_sytle])),
                         nrow=n_class)  # ,nrow=self.batch_size)
 
         elapsed = time.time() - start_time
