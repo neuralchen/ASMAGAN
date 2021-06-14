@@ -31,7 +31,7 @@ pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
 ```
 
 ## Preparation
-- **Dataset**
+- **Traning dataset**
     - Coming soon
 - **pre-trained model**
     - Download the model from [Github Realses](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMfinal.zip), and unzip the files to ***./train_logs/***
@@ -64,7 +64,8 @@ The command line below will generate 1088*1920 HD style migration pictures of 11
 --specify_sytle is used to specify which painter's style is used for style transfer. When the value is -1, 11 painters' styles are used for image(s) respectively for style transfer. The values corresponding to each painter's style are as follows
 [0: Berthe Moriso, 1: Edvard Munch, 2: Ernst Ludwig Kirchner, 3: Jackson Pollock, 4: Wassily Kandinsky, 5: Oscar-Claude Monet, 6: Nicholas Roerich, 7: Paul Cézanne, 8: Pablo Picasso, 9 : Samuel Colman, 10: Vincent Willem van Gogh]
 
-
+### Training
+Coming soon
 
 ## To cite our paper
 ```
