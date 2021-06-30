@@ -83,6 +83,20 @@ def create_dirs(sys_state):
     sys_state["reporterPath"] = os.path.join(sys_state["projectRoot"],sys_state["version"]+"_report")
 
 if __name__ == '__main__':
+
+    logo_str = """
+
+███╗   ██╗██████╗ ███████╗██╗ ██████╗     ███████╗     ██╗████████╗██╗   ██╗
+████╗  ██║██╔══██╗██╔════╝██║██╔════╝     ██╔════╝     ██║╚══██╔══╝██║   ██║
+██╔██╗ ██║██████╔╝███████╗██║██║  ███╗    ███████╗     ██║   ██║   ██║   ██║
+██║╚██╗██║██╔══██╗╚════██║██║██║   ██║    ╚════██║██   ██║   ██║   ██║   ██║
+██║ ╚████║██║  ██║███████║██║╚██████╔╝    ███████║╚█████╔╝   ██║   ╚██████╔╝
+╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝     ╚══════╝ ╚════╝    ╚═╝    ╚═════╝ 
+Neural Rendering Special Interesting Group of SJTU
+                                                                            
+    """
+    print(logo_str)
+    
     # import warnings
     # warnings.filterwarnings('ignore')
     config = getParameters()
