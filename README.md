@@ -3,11 +3,19 @@
 ## Proceedings of the 28th ACM International Conference on Multimedia
 **The official repository with Pytorch**
 
+## Top News <img width=8% src="./doc/img/new.gif"/>
+
+**`2021-09-25`**: The training realted code have been released.
+
 [[Arxiv paper]](https://arxiv.org/abs/2010.08175)
 
 ![logo](/doc/img/logo.png)
 
 ![title](/doc/img/title.png)
+
+
+
+
 
 ## Methodology
 ![Framework](/doc/img/framework.png)
