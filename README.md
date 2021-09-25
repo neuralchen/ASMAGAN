@@ -35,11 +35,12 @@ pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
 ```
 
 ## Preparation
-- **Traning dataset**
-    - Coming soon
+- **Training dataset**
+    - Download the content images from [Places365](<http://data.csail.mit.edu/places/places365/train_large_places365standard.tar>) .
+    - Download the artist images [data_art_backup.zip](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.1/data_art_backup.zip)  from  [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMAfinal.zip). Thanks for the data in [StyleAware](<https://github.com/CompVis/adaptive-style-transfer> ).
 - **pre-trained model**
     - Download the model from [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMAfinal.zip), and unzip the files to ***./train_logs/***
-    
+
 
 ## Usage
 ### To test with pretrained model
@@ -69,9 +70,18 @@ The command line below will generate 1088*1920 HD style migration pictures of 11
 [0: ***Berthe Moriso***, 1: ***Edvard Munch***, 2: ***Ernst Ludwig Kirchner***, 3: ***Jackson Pollock***, 4: ***Wassily Kandinsky***, 5: ***Oscar-Claude Monet***, 6: ***Nicholas Roerich***, 7: ***Paul Cézanne***, 8: ***Pablo Picasso***, 9 : ***Samuel Colman***, 10: ***Vincent Willem van Gogh***]
 
 ### Training
-Coming soon
+To train your own model, first change the dataset path in  ***./env/config.json***.
+
+Then use:
+
+```console
+python main.py --mode train --cuda 0 --dataloader_workers 12 --version $(your experiment name) --trainYaml train.yaml
+```
+
+Change the training parameters in ***./train_configs/train.yaml***.
 
 ## To cite our paper
+
 ```
 @inproceedings{DBLP:conf/mm/ChenYLQN20,
   author    = {Xuanhong Chen and
