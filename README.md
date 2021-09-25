@@ -5,7 +5,7 @@
 
 ## Top News <img width=8% src="./doc/img/new.gif"/>
 
-**`2021-09-25`**: The training realted code have been released.
+**`2021-09-25`**: Training related code has been released.
 
 [[Arxiv paper]](https://arxiv.org/abs/2010.08175)
 
