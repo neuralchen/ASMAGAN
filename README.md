@@ -47,7 +47,7 @@ pip install pyyaml paramiko pandas requests tensorboard tensorboardX tqdm
     - Download the content images from [Places365](<http://data.csail.mit.edu/places/places365/train_large_places365standard.tar>) .
     - Download the artist images [data_art_backup.zip](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.1/data_art_backup.zip)  from  [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.1/ASMAfinal.zip). Thanks for the data in [StyleAware](<https://github.com/CompVis/adaptive-style-transfer> ).
 - **pre-trained model**
-    - Download the model from [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.0/ASMAfinal.zip), and unzip the files to ***./train_logs/***
+    - Download the model from [Github Releases](https://github.com/neuralchen/ASMAGAN/releases/download/v.1.1/ASMAfinal.zip), and unzip the files to ***./train_logs/***
 
 
 ## Usage
