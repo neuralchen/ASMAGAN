@@ -6,6 +6,7 @@
 ######################################################################
 
 import paramiko,os
+import hashlib
 # ssh传输类：
 
 class fileUploaderClass(object):
